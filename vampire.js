@@ -69,7 +69,6 @@ class Vampire {
       vampire = vampire.creator;
     }
 
-
     return null;
   }
 }
