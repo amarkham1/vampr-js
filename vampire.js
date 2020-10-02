@@ -57,20 +57,16 @@ class Vampire {
     }
     let currentVampire = this;
     let commonVampires = {};
-    while (currentVampire.creator) {
+    while (currentVampire) {
       commonVampires[currentVampire.name] = currentVampire.name;
       currentVampire = currentVampire.creator;
     }
-    commonVampires[currentVampire.name] = currentVampire.name;
 
-    while (vampire.creator) {
+    while (vampire) {
       if (commonVampires[vampire.name]) {
         return vampire;
       }
       vampire = vampire.creator;
-    }
-    if (commonVampires[vampire.name]) {
-      return vampire;
     }
 
 
